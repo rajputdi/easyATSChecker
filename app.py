@@ -24,11 +24,11 @@ def parsed_resume(file):
 def main():
     # set the page title as Custom Write Assistant and page icon as a robot
     st.set_page_config(
-        page_title="Easy ATS System", page_icon=":robot_face:")
+        page_title="Easy ATS Checker", page_icon=":robot_face:")
 
-    st.header("Easy ATS System")
+    st.header("Easy ATS Checker :robot_face:")
     # a subheader for the app saying that it helps to check if your resume is ATS friendly
-    st.subheader("This app helps to check if your resume is ATS friendly")
+    st.subheader("help check if your resume is ATS friendly")
 
     # allow the user to upload their resume as a PDF file
     resume = st.file_uploader("Upload your resume as a PDF file")
@@ -40,7 +40,10 @@ def main():
     if resume:
         placeholder.text("Generating your ATS parsed resume...")
         result = parsed_resume(resume)
-        placeholder.text("Resume Text Parsed ✅")
+
+        # After the resume is parsed, display a message saying that the resume is parsed
+        # display the text in Times New Roman font
+        placeholder.text("Below is your ATS Parsed resume text!")
         st.info(result)
     else:
         placeholder.info("Please upload a resume file")
