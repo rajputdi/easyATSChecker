@@ -1,7 +1,5 @@
 import streamlit as st
 import PyPDF2
-import os
-import csv
 
 
 # Parse the resume using the resume parser
